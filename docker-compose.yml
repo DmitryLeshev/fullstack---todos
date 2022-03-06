@@ -1,0 +1,44 @@
+version: "3.7"
+services:
+  postgres:
+    image: postgres
+    restart: always
+    container_name: postgres
+    environment:
+      POSTGRES_PASSWORD: password-dima
+      POSTGRES_USER: dima
+      POSTGRES_DB: application
+    ports:
+      - 5432:5432
+    # ui:
+    #   build: ./ui
+    #   container_name: ui
+    #   ports:
+    #     - 3000:80
+    # server:
+    #   build:
+    #     context: ./server
+    #     dockerfile: Dockerfile
+    #   container_name: server
+    #   restart: on-failure
+    #   ports:
+    #     - 4000:4000
+    # deploy:
+    #   resources:
+    #     limits:
+    #       memory: '1G'
+    #       cpus: '2'
+    # links:
+    #   - postgres
+
+
+    # links:
+    #   - server
+    # environment:
+    #   - SERVER.HOST=127.0.0.1
+    #   - SERVER.PORT=4000
+    #   - SERVER.WORKERS=4
+    #   - TRACING.LVL=info
+    #   - DB.PG.URL=postgres://dima:password-dima@localhost:5432/application
+    #   - SECRET.KEY=my-secret-key-to-change-in-prod
+    #   - SECRET.JWT=my-secret-to-change-in-prod
